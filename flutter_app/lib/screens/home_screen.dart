@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const <Widget>[
                   Text(
-                    'Hi, User 01',
+                    'Welcome',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -91,6 +91,102 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            Container(
+              margin: EdgeInsets.only(top: 21),
+              height: 210,
+              child: ListView.builder(
+                  padding: EdgeInsets.only(left: 25, right: 6),
+                  itemCount: newbooks.length,
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(right: 15),
+                      height: 210,
+                      width: 153,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.black45,
+                        image: DecorationImage(
+                            image: AssetImage("img/background.png")),
+                      ),
+                    );
+                  }),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 25, top: 25),
+              child: Text(
+                'Discover Latest Book',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            ListView.builder(
+                padding: EdgeInsets.only(top: 25, right: 25, left: 25),
+                physics: BouncingScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: populars.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      print('ListView Tapped');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 19),
+                      height: 81,
+                      width: MediaQuery.of(context).size.width - 50,
+                      color: Colors.blueAccent,
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            height: 81,
+                            width: 62,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                image: DecorationImage(
+                                    image: AssetImage("img/background.png")),
+                                color: Colors.blueAccent),
+                          ),
+                          SizedBox(
+                            width: 21,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                populars[index].title,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: Colors.black87),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                populars[index].author,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                populars[index].page,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w200,
+                                    fontSize: 12,
+                                    color: Colors.black87),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                }),
           ],
         ),
       ),
