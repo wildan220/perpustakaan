@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class ApiService {
   ApiService();
 
-  final String baseUrl = 'http://localhost:8000/api/';
+  final String baseUrl = 'http://192.168.43.241:8000/api/book';
 
   Future<List<Category>> fetchCategories() async {
     http.Response response = await http.get(
