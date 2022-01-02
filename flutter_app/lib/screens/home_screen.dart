@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_app/models/newbook_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -95,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: EdgeInsets.only(top: 21),
               height: 210,
               child: ListView.builder(
+                  itemCount: newbook.fromJson(model),
                   padding: EdgeInsets.only(left: 25, right: 6),
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
