@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreTransactionRequest extends FormRequest
+class StoreBookRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,13 +24,10 @@ class StoreTransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => [
-                'required',
-                Rule::exists('categories', 'id')->where('user_id', auth()->id()),
-            ],
-            'amount' => 'required',
-            'description' => 'required',
-            'transaction_date' => 'required|date',
+        'title' => 'required',
+        'author' => 'required',
+        'description' => 'required',
+        'link' => 'required',
         ];
     }
 }
