@@ -96,7 +96,6 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 210,
               child: ListView.builder(
                   padding: EdgeInsets.only(left: 25, right: 6),
-                  itemCount: newbooks.length,
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
@@ -124,12 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.only(top: 25, right: 25, left: 25),
                 physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: populars.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {
-                      print('ListView Tapped');
-                    },
+                    onTap: () {},
                     child: Container(
                       margin: EdgeInsets.only(bottom: 19),
                       height: 81,
@@ -154,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                populars[index].title,
+                                'title',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
@@ -164,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 5,
                               ),
                               Text(
-                                populars[index].author,
+                                'author',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14,
@@ -174,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 5,
                               ),
                               Text(
-                                populars[index].page,
+                                'halaman',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w200,
                                     fontSize: 12,
