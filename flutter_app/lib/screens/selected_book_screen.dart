@@ -31,8 +31,8 @@ class SelectedBookScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
                                 color: Color(0xFF000000)),
-                            child: Image(
-                                image: AssetImage("assets/img/background.png")),
+                            child:
+                                Image(image: AssetImage("assets/img/back.jpg")),
                           ),
                         ),
                       ),
@@ -43,10 +43,11 @@ class SelectedBookScreen extends StatelessWidget {
                           width: 225,
                           height: 172,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/image/background.png'))),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage('assets/img/book1.jpg'),
+                            ),
+                          ),
                         ),
                       )
                     ],
@@ -58,7 +59,7 @@ class SelectedBookScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(top: 24, left: 25),
                   child: Text(
-                    'Tittle',
+                    'HARRY POTTER',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 27,
@@ -68,7 +69,7 @@ class SelectedBookScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(top: 7, left: 25),
                   child: Text(
-                    'Author',
+                    'JK. ROWLING',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
@@ -97,7 +98,7 @@ class SelectedBookScreen extends StatelessWidget {
                           Tab(
                             child: Container(
                               margin: EdgeInsets.only(right: 23),
-                              child: Text('Favourite'),
+                              child: Text('Link'),
                             ),
                           ),
                           Tab(
